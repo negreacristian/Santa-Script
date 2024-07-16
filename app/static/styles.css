@@ -1,0 +1,77 @@
+html, body {
+    padding: 0;
+    margin: 0;
+    width: 100vw;
+    height: 100vh;
+    position: relative;
+    overflow: hidden;
+    background: linear-gradient(#123, #111);
+}
+
+.snowflake {
+    --size: 1vw;
+    width: var(--size);
+    height: var(--size);
+    background: white;
+    border-radius: 50%;
+    position: absolute;
+    top: -5vh;
+    z-index: 0; /* Ensure snowflakes are behind the card */
+}
+
+@keyframes snowfall {
+    0% {
+        transform: translate3d(var(--left-ini), 0, 0);
+    }
+    100% {
+        transform: translate3d(var(--left-end), 110vh, 0);
+    }
+}
+
+/* Custom styles for responsiveness and aesthetics */
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+}
+
+.card {
+    width: 100%;
+    max-width: 500px;
+    margin-bottom: 20px;
+    position: relative;
+    z-index: 1; /* Ensure card is in front of snowflakes */
+    border: 0;
+}
+
+.card-header {
+    background-color: #D5392C;
+    color: #FFFFFF;
+    text-align: center;
+    font-family: 'Mountains of Christmas', cursive;
+    font-size: 28px;
+}
+
+.list-group-item {
+    background-color: #D3AF37;
+    border-color: #F73525;
+}
+
+.btn-primary {
+    background-color: #F73525;
+    border-color: #D5392C;
+}
+
+.btn-primary:hover {
+    background-color: #D5392C;
+}
+
+.alert-success {
+    background-color: #d4edda;
+}
+
+.alert-error {
+    background-color: #f8d7da;
+}
